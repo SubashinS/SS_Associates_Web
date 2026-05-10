@@ -1,72 +1,73 @@
-# SS Associates Website
+# SS Associates Full-Stack Website
 
-High-end multi-page React website for SS Associates, a Coimbatore-based real estate, legal documentation, approval, loan processing, and house construction company.
+Premium React website plus Express backend for SS Associates, a Coimbatore-based documentation and legal service provider with property, approval, loan processing, and additional real estate/construction support.
 
-## Tech Stack
-
-- React + Vite
-- Tailwind CSS
-- Framer Motion
-- React Router
-- Lucide React icons
-
-## Project Structure
+## Structure
 
 ```text
-src/
-  App.jsx
-  main.jsx
-  index.css
-  data/
-    siteData.js
-  components/
-    Button.jsx
-    ContactForm.jsx
-    CustomCursor.jsx
-    FAQAccordion.jsx
-    FloatingActions.jsx
-    Footer.jsx
-    GlowCard.jsx
-    JourneyMap.jsx
-    Navbar.jsx
-    PageShell.jsx
-    Reveal.jsx
-    SectionHeading.jsx
-    ServiceTabs.jsx
-    StatCard.jsx
-    TestimonialsSlider.jsx
-    Timeline.jsx
-  pages/
-    Home.jsx
-    Services.jsx
-    About.jsx
-    Process.jsx
-    Contact.jsx
+root/
+  client/   React + Vite + Tailwind + Framer Motion
+  server/   Node.js + Express API
+  package.json
+  README.md
 ```
 
-## Routes
+## Frontend
 
-- `/` - Home
-- `/services` - Interactive service filtering and service groups
-- `/about` - Company profile, owner details, trust indicators
-- `/process` - Timeline process and client journey
-- `/contact` - Validated contact form, contact cards, map embed
+- Multi-page React Router site
+- Documentation-first service hierarchy
+- Animated counters and page transitions
+- Real SS Associates logo in navbar and footer
+- Contact form redirects directly to WhatsApp
+- Customer feedback section connected to backend
 
-## Run Locally
+## Backend
+
+Endpoints:
+
+- `GET /feedback`
+- `POST /feedback`
+- `GET /health`
+
+The backend stores and serves customer feedback. Enquiries are sent directly from the frontend to WhatsApp using `wa.me`.
+
+## Environment
+
+Create `server/.env`:
+
+```env
+PORT=5000
+CLIENT_ORIGIN=http://localhost:5173
+```
+
+Create `client/.env` if your API URL changes:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000
+```
+
+## Install
 
 ```bash
 npm install
+npm install --prefix client
+npm install --prefix server
+```
+
+## Run Frontend + Backend
+
+```bash
 npm run dev
 ```
 
-## Build
+Client: `http://localhost:5173`
 
-```bash
-npm run build
-```
+Server: `http://localhost:5000`
 
-## Quality Check
+## Build / Validate
 
 ```bash
 npm run lint
+npm run build
+node --check server/src/index.js
 ```

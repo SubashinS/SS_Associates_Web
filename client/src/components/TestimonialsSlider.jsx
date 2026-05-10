@@ -55,7 +55,6 @@ export default function TestimonialsSlider() {
             <button
               key={item.name}
               type="button"
-              data-cursor="button"
               aria-label={`Show testimonial ${index + 1}`}
               onClick={() => setActive(index)}
               className={clsx(

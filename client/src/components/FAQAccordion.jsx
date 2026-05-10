@@ -22,7 +22,6 @@ export default function FAQAccordion({ items = faqs }) {
           >
             <button
               type="button"
-              data-cursor="button"
               onClick={() => setOpen(active ? -1 : index)}
               className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-6"
             >

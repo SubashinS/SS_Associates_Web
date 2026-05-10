@@ -1,5 +1,11 @@
 import { ArrowRight, BadgeCheck, Building2, CheckCircle2, Sparkles } from 'lucide-react'
-import { business, heroImages, serviceCategories, services } from '../data/siteData'
+import {
+  business,
+  heroImages,
+  serviceCategories,
+  serviceCategoryMeta,
+  services,
+} from '../data/siteData'
 import { ButtonLink } from '../components/Button'
 import FAQAccordion from '../components/FAQAccordion'
 import GlowCard from '../components/GlowCard'
@@ -20,12 +26,12 @@ export default function Services() {
               Complete service suite
             </div>
             <h1 className="font-display text-4xl font-extrabold leading-tight text-slate-950 sm:text-6xl">
-              Premium support for every property workflow.
+              Documentation-first support for every property workflow.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-              Legal documents, taxes, name transfers, approvals, online payments,
-              loans, real estate, and house construction, grouped clearly so you
-              can move without confusion.
+              Documentation and legal services come first. Property services are
+              next, while real estate and construction are available as clearly
+              labeled additional services.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <ButtonLink to="/contact" icon={ArrowRight}>
@@ -53,7 +59,7 @@ export default function Services() {
                       className="rounded-2xl border border-white/30 bg-white/20 p-3 text-white backdrop-blur-xl"
                     >
                       <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-teal-50">
-                        Category
+                        {serviceCategoryMeta[category]?.badge ?? 'Category'}
                       </p>
                       <p className="mt-2 text-sm font-extrabold">{category}</p>
                     </div>
@@ -70,8 +76,8 @@ export default function Services() {
           <SectionHeading
             eyebrow="Interactive filters"
             icon={BadgeCheck}
-            title="Find the right service in seconds."
-            copy="Each service card is grouped by category and built for quick scanning across mobile, tablet, and desktop screens."
+            title="Core documentation services stay first."
+            copy="The service grid now prioritizes documentation and legal work, then property services, with real estate and construction presented as additional support."
           />
           <div className="mt-12">
             <ServiceTabs />
@@ -85,7 +91,7 @@ export default function Services() {
             eyebrow="Grouped expertise"
             icon={Building2}
             title="Three service lanes, one accountable partner."
-            copy="The site organizes the offering around the way clients naturally think: paperwork, authority-facing property tasks, and practical add-ons."
+            copy="The hierarchy is intentionally clear: core documentation services, property services, and additional real estate or construction assistance."
           />
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
             {serviceCategories.slice(1).map((category, index) => (
@@ -113,16 +119,28 @@ export default function Services() {
 
 function ServiceGroup({ category, delay }) {
   const items = services.filter((service) => service.category === category)
+  const meta = serviceCategoryMeta[category]
+  const isCore = meta?.emphasis === 'core'
 
   return (
-    <GlowCard delay={delay} className="rounded-[30px]">
-      <div className="mb-6 flex items-center gap-3">
+    <GlowCard
+      delay={delay}
+      className={`rounded-[30px] ${isCore ? 'ring-1 ring-teal-600/30' : ''}`}
+    >
+      <div className="mb-6 flex flex-wrap items-center gap-3">
         <span className="grid h-11 w-11 place-items-center rounded-2xl bg-teal-700 text-white">
           <CheckCircle2 className="h-5 w-5" />
         </span>
         <h3 className="font-display text-xl font-extrabold text-slate-950">
           {category}
         </h3>
+        <span
+          className={`rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] ${
+            isCore ? 'bg-teal-700 text-white' : 'bg-teal-50 text-teal-800'
+          }`}
+        >
+          {meta?.badge}
+        </span>
       </div>
       <div className="grid gap-3">
         {items.map((service) => (

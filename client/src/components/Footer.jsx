@@ -12,13 +12,17 @@ export default function Footer() {
       <div className="site-container relative py-14 sm:py-18">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr]">
           <div>
-            <Link to="/" data-cursor="button" className="inline-flex items-center gap-3">
-              <span className="grid h-12 w-12 place-items-center rounded-full bg-white font-display text-sm font-extrabold text-teal-900">
-                SS
+            <Link to="/" className="inline-flex items-center gap-3">
+              <span className="flex h-16 w-40 items-center overflow-hidden rounded-2xl bg-white px-3">
+                <img
+                  src="/ss-associates-logo.jpeg"
+                  alt="SS Associates logo"
+                  className="h-full w-full object-contain"
+                />
               </span>
               <span>
                 <span className="block font-display text-xl font-extrabold">
-                  {business.name}
+                  {business.displayName}
                 </span>
                 <span className="block text-sm font-semibold text-teal-100/80">
                   {business.tagline}
@@ -26,8 +30,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-7 text-white/70">
-              Premium real estate, house construction, legal documentation, and
-              government property service support in Coimbatore.
+              Premium documentation and legal services with property, approval,
+              loan, and additional real estate support in Coimbatore.
             </p>
             <ButtonLink to="/contact" icon={ArrowRight} className="mt-7" variant="primary">
               Start a consultation
@@ -58,7 +62,7 @@ export default function Footer() {
               {business.email}
             </ContactLine>
             <ContactLine
-              href="https://www.google.com/maps/search/?api=1&query=Coimbatore"
+              href="https://www.google.com/maps/search/?api=1&query=567%2C%201st%20Floor%2C%201st%20Street%2C%20Gandhipuram%2C%20Coimbatore%20-%20641012"
               icon={MapPin}
             >
               {business.location}
@@ -90,7 +94,6 @@ function FooterLink({ to, children }) {
   return (
     <Link
       to={to}
-      data-cursor="button"
       className="text-sm font-medium text-white/60 transition hover:text-white"
     >
       {children}
@@ -104,7 +107,6 @@ function ContactLine({ href, icon: Icon, children }) {
       href={href}
       target={href.startsWith('http') ? '_blank' : undefined}
       rel={href.startsWith('http') ? 'noreferrer' : undefined}
-      data-cursor="button"
       className="group flex items-start gap-3 text-sm font-medium text-white/70 transition hover:text-white"
     >
       <span className="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-white/10 text-teal-100 transition group-hover:bg-teal-400/20">

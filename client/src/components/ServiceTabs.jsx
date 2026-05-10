@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Filter } from 'lucide-react'
 import clsx from 'clsx'
-import { serviceCategories, services } from '../data/siteData'
+import { serviceCategories, serviceCategoryMeta, services } from '../data/siteData'
 import GlowCard from './GlowCard'
 
 export default function ServiceTabs({ compact = false }) {
@@ -21,7 +21,6 @@ export default function ServiceTabs({ compact = false }) {
           <motion.button
             key={category}
             type="button"
-            data-cursor="button"
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => setActive(category)}
@@ -51,22 +50,42 @@ export default function ServiceTabs({ compact = false }) {
 
 export function ServiceCard({ service, delay = 0 }) {
   const Icon = service.icon
+  const meta = serviceCategoryMeta[service.category]
+  const isCore = meta?.emphasis === 'core'
+  const isAdditional = meta?.emphasis === 'additional'
 
   return (
     <GlowCard
       delay={delay}
-      className="group min-h-[248px] rounded-[26px] p-5 sm:p-6"
+      className={clsx(
+        'group min-h-[248px] rounded-[26px] p-5 sm:p-6',
+        isCore && 'ring-1 ring-teal-600/25',
+      )}
     >
       <div className="flex h-full flex-col">
         <div className="flex items-start justify-between gap-4">
           <motion.div
             whileHover={{ rotate: -6, scale: 1.08 }}
-            className="grid h-[52px] w-[52px] place-items-center rounded-2xl bg-[linear-gradient(135deg,#0f9f7b,#1ea7c6)] text-white shadow-[0_14px_34px_rgba(15,127,129,0.25)]"
+            className={clsx(
+              'grid h-[52px] w-[52px] place-items-center rounded-2xl text-white shadow-[0_14px_34px_rgba(15,127,129,0.25)]',
+              isCore
+                ? 'bg-[linear-gradient(135deg,#063f46,#0f9f7b)]'
+                : 'bg-[linear-gradient(135deg,#0f9f7b,#1ea7c6)]',
+            )}
           >
             <Icon className="h-6 w-6" />
           </motion.div>
-          <span className="rounded-full border border-teal-800/10 bg-teal-50/80 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em] text-teal-800">
-            {service.category}
+          <span
+            className={clsx(
+              'rounded-full border px-3 py-1 text-[11px] font-bold uppercase tracking-[0.16em]',
+              isCore
+                ? 'border-teal-800/15 bg-teal-700 text-white'
+                : isAdditional
+                  ? 'border-cyan-800/10 bg-cyan-50/90 text-cyan-800'
+                  : 'border-teal-800/10 bg-teal-50/80 text-teal-800',
+            )}
+          >
+            {meta?.badge ?? service.category}
           </span>
         </div>
         <h3 className="mt-6 font-display text-xl font-extrabold text-slate-950">

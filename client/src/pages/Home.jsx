@@ -13,8 +13,6 @@ import ServiceTabs from '../components/ServiceTabs'
 import StatCard from '../components/StatCard'
 import TestimonialsSlider from '../components/TestimonialsSlider'
 
-const headline = 'Property documentation, approvals, construction and real estate with premium clarity'
-
 export default function Home() {
   return (
     <PageShell className="mesh-bg overflow-hidden">
@@ -26,8 +24,8 @@ export default function Home() {
           <SectionHeading
             eyebrow="Why choose us"
             icon={ShieldCheck}
-            title="A calm, expert layer over complex property decisions."
-            copy="SS Associates brings legal documentation, government workflows, loan coordination, real estate, and construction guidance into one responsive experience."
+            title="A calm, expert layer over documentation and property decisions."
+            copy="SS Associates leads with documentation and legal services, then supports property workflows, loan coordination, and additional real estate or construction needs."
           />
           <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {whyChoose.map((item, index) => {
@@ -55,8 +53,8 @@ export default function Home() {
           <SectionHeading
             eyebrow="Service command center"
             icon={Sparkles}
-            title="Choose the exact property workflow you need."
-            copy="Filter by category and explore a polished snapshot of the services SS Associates provides for clients in and around Coimbatore."
+            title="Start with core documentation services."
+            copy="Documentation and legal services are prioritized first, with property services next and real estate or construction support clearly marked as additional."
           />
           <div className="mt-12">
             <ServiceTabs compact />
@@ -108,33 +106,33 @@ function Hero() {
           <Reveal>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-teal-700/10 bg-white/70 px-3 py-1.5 text-xs font-bold uppercase tracking-[0.22em] text-teal-800 shadow-sm">
               <Sparkles className="h-4 w-4" />
-              {business.tagline}
+              Documentation & Legal Service Provider
             </div>
           </Reveal>
 
           <h1 className="font-display text-4xl font-extrabold leading-[1.04] text-slate-950 sm:text-6xl lg:text-7xl">
-            {headline.split(' ').map((word, index) => (
+            {[business.displayName, business.tagline].map((line, index) => (
               <motion.span
-                key={`${word}-${index}`}
+                key={line}
                 initial={{ opacity: 0, y: 28, filter: 'blur(8px)' }}
                 animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                transition={{ delay: 0.05 + index * 0.028, duration: 0.52 }}
+                transition={{ delay: 0.08 + index * 0.14, duration: 0.62 }}
                 className={
-                  word === 'premium' || word === 'clarity'
-                    ? 'gradient-text inline-block pr-3'
-                    : 'inline-block pr-3'
+                  index === 0
+                    ? 'block uppercase tracking-[0.02em]'
+                    : 'gradient-text mt-2 block text-3xl sm:text-5xl lg:text-6xl'
                 }
               >
-                {word}
+                {line}
               </motion.span>
             ))}
           </h1>
 
           <Reveal delay={0.24}>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-              SS Associates helps homeowners, land buyers, families, and builders
-              move through property paperwork, approvals, loans, construction, and
-              real estate decisions with confidence.
+              SS Associates helps clients complete property documentation, legal
+              paperwork, approvals, transfers, tax updates, and related property
+              services with clarity and confidence.
             </p>
           </Reveal>
 
@@ -190,7 +188,7 @@ function HeroVisual() {
                 Coimbatore property desk
               </p>
               <p className="mt-2 font-display text-2xl font-extrabold">
-                Documentation-led real estate guidance
+                Documentation-led property guidance
               </p>
             </div>
           </div>
@@ -216,7 +214,7 @@ function HeroVisual() {
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
           className="absolute -bottom-5 right-2 hidden rounded-[24px] border border-white/70 bg-white/90 p-4 shadow-[0_20px_50px_rgba(8,66,72,0.18)] backdrop-blur-xl sm:block lg:-right-5"
         >
-          <Link to="/process" data-cursor="button" className="block">
+          <Link to="/process" className="block">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-teal-800">
               Client journey
             </p>
@@ -247,7 +245,7 @@ function HomeCTA() {
                 </h2>
                 <p className="mt-5 max-w-2xl text-base leading-8 text-white/70">
                   Share the property goal. SS Associates will help map the right
-                  documentation, approval, loan, real estate, or construction path.
+                  documentation, legal, approval, loan, or property service path.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">

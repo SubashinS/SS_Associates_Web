@@ -11,7 +11,6 @@ export default function FloatingActions() {
         rel="noreferrer"
         aria-label="Chat with SS Associates on WhatsApp"
         title="WhatsApp"
-        data-cursor="button"
         initial={{ opacity: 0, y: 20, scale: 0.92 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ delay: 0.8, duration: 0.45 }}
@@ -25,7 +24,6 @@ export default function FloatingActions() {
         href={business.phoneHref}
         aria-label="Call SS Associates"
         title="Call"
-        data-cursor="button"
         initial={{ opacity: 0, y: 20, scale: 0.92 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ delay: 0.9, duration: 0.45 }}

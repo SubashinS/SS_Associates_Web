@@ -11,7 +11,7 @@ const values = [
   'Document clarity before transaction speed',
   'Respectful communication with families and first-time buyers',
   'Local field knowledge backed by organized process',
-  'Practical guidance from approval to construction',
+  'Practical guidance from legal paperwork to property completion',
 ]
 
 export default function About() {
@@ -30,8 +30,9 @@ export default function About() {
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
               SS Associates is led by {business.owner}, serving clients across
-              Coimbatore with real estate, house construction, legal documentation,
-              approval, transfer, tax, and loan processing support.
+              Coimbatore with core documentation and legal services, plus
+              property approvals, transfers, taxes, loans, and additional real
+              estate or construction coordination.
             </p>
             <div className="mt-8">
               <ButtonLink to="/contact" variant="primary">
@@ -58,7 +59,7 @@ export default function About() {
                       {business.owner}
                     </p>
                     <p className="mt-2 text-sm font-semibold text-white/70">
-                      Documentation, real estate, and construction coordination.
+                      Documentation, legal, and property service coordination.
                     </p>
                   </div>
                 </div>

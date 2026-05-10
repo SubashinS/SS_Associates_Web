@@ -30,15 +30,19 @@ export default function Navbar() {
             : 'border-white/60 bg-white/50 shadow-[0_10px_30px_rgba(8,66,72,0.08)] backdrop-blur-xl',
         )}
       >
-        <Link to="/" data-cursor="button" className="flex min-w-0 items-center gap-3">
-          <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[linear-gradient(135deg,#063f46,#0f9f7b)] font-display text-sm font-extrabold text-white shadow-[0_14px_34px_rgba(15,127,129,0.28)]">
-            SS
+        <Link to="/" className="flex min-w-0 items-center gap-3">
+          <span className="flex h-12 w-[118px] shrink-0 items-center overflow-hidden rounded-2xl bg-white px-2 shadow-[0_12px_28px_rgba(15,127,129,0.16)] sm:w-[132px]">
+            <img
+              src="/ss-associates-logo.jpeg"
+              alt="SS Associates logo"
+              className="h-full w-full object-contain"
+            />
           </span>
           <span className="hidden min-w-0 leading-tight sm:block">
             <span className="block font-display text-sm font-extrabold text-slate-950 sm:text-base">
-              {business.name}
+              {business.displayName}
             </span>
-            <span className="block max-w-[170px] truncate text-[11px] font-semibold uppercase tracking-[0.16em] text-teal-800/75 sm:max-w-none">
+            <span className="block max-w-[190px] truncate text-[11px] font-semibold uppercase tracking-[0.16em] text-teal-800/75 sm:max-w-none">
               {business.tagline}
             </span>
           </span>
@@ -80,7 +84,6 @@ export default function Navbar() {
                 <NavLink
                   key={item.href}
                   to={item.href}
-                  data-cursor="button"
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
                     clsx(
@@ -114,7 +117,6 @@ function NavItem({ item }) {
   return (
     <NavLink
       to={item.href}
-      data-cursor="button"
       className={({ isActive }) =>
         clsx(
           'relative rounded-full px-4 py-2 text-sm font-bold transition',

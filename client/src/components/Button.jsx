@@ -35,7 +35,6 @@ export function ButtonLink({
     return (
       <motion.a
         href={href}
-        data-cursor="button"
         whileHover={{ y: -2 }}
         whileTap={{ scale: 0.96 }}
         className={classes}
@@ -48,7 +47,7 @@ export function ButtonLink({
 
   return (
     <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.96 }}>
-      <Link to={to} data-cursor="button" className={classes} {...props}>
+      <Link to={to} className={classes} {...props}>
         {content}
       </Link>
     </motion.div>
@@ -61,7 +60,6 @@ export function IconButton({ children, className = '', label, ...props }) {
       type="button"
       aria-label={label}
       title={label}
-      data-cursor="button"
       whileHover={{ y: -2, scale: 1.03 }}
       whileTap={{ scale: 0.94 }}
       className={clsx(

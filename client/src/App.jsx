@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { AnimatePresence, MotionConfig } from 'framer-motion'
 import { Route, Routes, useLocation } from 'react-router-dom'
-import CustomCursor from './components/CustomCursor'
 import FloatingActions from './components/FloatingActions'
 import Footer from './components/Footer'
 import Navbar from './components/Navbar'
@@ -21,7 +20,6 @@ function App() {
   return (
     <MotionConfig reducedMotion="user">
       <div className="min-h-screen overflow-x-hidden bg-[var(--page-bg)] text-slate-900">
-        <CustomCursor />
         <Navbar />
         <AnimatePresence mode="wait" initial={false}>
           <Routes location={location} key={location.pathname}>

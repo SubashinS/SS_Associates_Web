@@ -24,6 +24,7 @@ import {
   ReceiptText,
   Route,
   Scale,
+  ScrollText,
   ShieldCheck,
   Sparkles,
   Stamp,
@@ -35,15 +36,17 @@ import {
 
 export const business = {
   name: 'SS Associates',
-  owner: 'S. Saravanan DME',
+  displayName: 'SS ASSOCIATES',
+  owner: 'S. Saravanan',
   phone: '+91 77082 42395',
   phoneHref: 'tel:+917708242395',
   whatsappHref:
-    'https://wa.me/917708242395?text=Hello%20SS%20Associates%2C%20I%20would%20like%20to%20discuss%20a%20property%20service.',
+    'https://wa.me/917708242395?text=Hello%20SS%20Associates%2C%20I%20would%20like%20to%20discuss%20a%20documentation%20or%20property%20service.',
   email: 'shravikonline@gmail.com',
   emailHref: 'mailto:shravikonline@gmail.com',
-  location: 'Coimbatore',
-  tagline: 'House Construction & Real Estate Experts',
+  location: '567, 1st Floor, 1st Street, Gandhipuram, Coimbatore - 641012',
+  shortLocation: 'Gandhipuram, Coimbatore',
+  tagline: 'Your Trusted Property Partner',
 }
 
 export const navItems = [
@@ -56,123 +59,145 @@ export const navItems = [
 
 export const stats = [
   { value: '12+', label: 'Years of field experience', icon: Clock3 },
-  { value: '850+', label: 'Clients guided end-to-end', icon: Users },
+  { value: '2000+', label: 'Clients guided end-to-end', icon: Users },
   { value: '98%', label: 'Documentation success focus', icon: TrendingUp },
-  { value: '40+', label: 'Approval and transfer workflows', icon: CheckCircle2 },
+  { value: '150+', label: 'Approval and transfer workflows', icon: CheckCircle2 },
 ]
 
 export const serviceCategories = [
   'All',
-  'Legal & Documentation',
-  'Government & Property',
-  'Additional',
+  'Documentation & Legal Services',
+  'Property Services',
+  'Additional Services',
 ]
+
+export const serviceCategoryMeta = {
+  'Documentation & Legal Services': {
+    badge: 'Core Services',
+    emphasis: 'core',
+  },
+  'Property Services': {
+    badge: 'Property Services',
+    emphasis: 'standard',
+  },
+  'Additional Services': {
+    badge: 'Additional Services',
+    emphasis: 'additional',
+  },
+}
 
 export const services = [
   {
     title: 'EC & NAGAL Apply',
-    category: 'Legal & Documentation',
+    category: 'Documentation & Legal Services',
     icon: FileText,
     description:
       'Encumbrance certificate and NAGAL application support with careful document checks.',
   },
   {
+    title: 'Will Deed',
+    category: 'Documentation & Legal Services',
+    icon: ScrollText,
+    description:
+      'Will deed documentation support with clear drafting coordination and witness-ready paperwork.',
+  },
+  {
     title: 'Sale Deed / Settlement Deed',
-    category: 'Legal & Documentation',
+    category: 'Documentation & Legal Services',
     icon: FileSignature,
     description:
       'Drafting coordination, review support, and registration guidance for property transfers.',
   },
   {
     title: 'General Power of Attorney',
-    category: 'Legal & Documentation',
+    category: 'Documentation & Legal Services',
     icon: KeyRound,
     description:
       'Structured support for GPA preparation, verification, and execution workflows.',
   },
   {
     title: 'Adjudication Power',
-    category: 'Legal & Documentation',
+    category: 'Documentation & Legal Services',
     icon: Scale,
     description:
       'Assistance for stamp duty adjudication and authority-facing documentation needs.',
   },
   {
     title: 'MODT & MODT Cancellation',
-    category: 'Legal & Documentation',
+    category: 'Documentation & Legal Services',
     icon: Stamp,
     description:
       'Bank-linked mortgage deposit title deed registration and cancellation coordination.',
   },
   {
     title: 'Marriage Registration',
-    category: 'Legal & Documentation',
+    category: 'Documentation & Legal Services',
     icon: HeartHandshake,
     description:
       'Registration support with checklist clarity, forms, and appointment guidance.',
   },
   {
     title: 'Vacant Land Tax',
-    category: 'Government & Property',
+    category: 'Property Services',
     icon: Landmark,
     description:
       'Tax application, update, and payment guidance for vacant land holdings.',
   },
   {
     title: 'Property & Water Tax',
-    category: 'Government & Property',
+    category: 'Property Services',
     icon: Droplet,
     description:
       'Municipal property and water tax support for corrections, payments, and records.',
   },
   {
     title: 'Name Transfers',
-    category: 'Government & Property',
+    category: 'Property Services',
     icon: Zap,
     description:
       'EB, Patta, and TSLR name transfer coordination with document readiness checks.',
   },
   {
     title: 'Plan Approval',
-    category: 'Government & Property',
+    category: 'Property Services',
     icon: Map,
     description:
       'Plan approval support for residential projects with practical compliance guidance.',
   },
   {
     title: 'DTCP Approval',
-    category: 'Government & Property',
+    category: 'Property Services',
     icon: BadgeCheck,
     description:
       'DTCP approval pathway support for layouts, land conversion, and development files.',
   },
   {
     title: 'Loan Processing',
-    category: 'Additional',
+    category: 'Additional Services',
     icon: Banknote,
     description:
       'Home and property loan processing support from file preparation to bank coordination.',
   },
   {
     title: 'Online Payments',
-    category: 'Additional',
+    category: 'Additional Services',
     icon: CreditCard,
     description:
       'Secure assisted online payments for approved property and government workflows.',
   },
   {
     title: 'Real Estate',
-    category: 'Additional',
+    category: 'Additional Services',
     icon: Building2,
     description:
       'Buying and selling support with title sense, location insight, and negotiation clarity.',
   },
   {
     title: 'House Construction',
-    category: 'Additional',
+    category: 'Additional Services',
     icon: Hammer,
     description:
-      'Construction coordination for homes, from planning guidance to execution oversight.',
+      'Additional construction coordination for homes, from planning guidance to execution oversight.',
   },
 ]
 
@@ -186,7 +211,7 @@ export const whyChoose = [
   {
     title: 'Single-window coordination',
     description:
-      'Legal paperwork, government services, loan help, real estate, and construction are aligned.',
+      'Core documentation, property services, loan help, and additional real estate support are aligned.',
     icon: Layers3,
   },
   {
@@ -244,7 +269,7 @@ export const processSteps = [
 export const journey = [
   {
     title: 'Idea',
-    text: 'Buy, build, transfer, register, or regularize.',
+    text: 'Document, transfer, register, regularize, buy, or build.',
     icon: Sparkles,
   },
   {
@@ -279,9 +304,9 @@ export const testimonials = [
   },
   {
     name: 'K. Dinesh',
-    role: 'Construction client',
+    role: 'Plan approval client',
     quote:
-      'From plan approval to construction coordination, SS Associates gave practical guidance at each stage.',
+      'From plan approval to document completion, SS Associates gave practical guidance at each stage.',
   },
 ]
 
@@ -289,7 +314,7 @@ export const faqs = [
   {
     question: 'Can SS Associates handle both real estate and documentation?',
     answer:
-      'Yes. The team supports property buying and selling, legal documentation, government applications, loan processing, and house construction coordination.',
+      'Yes. Documentation and legal services are the core focus, with property services, loan processing, and additional real estate or construction coordination available.',
   },
   {
     question: 'What details are needed to start a service?',
@@ -302,9 +327,9 @@ export const faqs = [
       'Yes. Name transfer support is available for EB, Patta, and TSLR workflows with document readiness checks.',
   },
   {
-    question: 'Is the contact form connected to a backend?',
+    question: 'How long does documentation processing take?',
     answer:
-      'The website includes frontend validation and a confirmation state. A backend or form service can be connected during deployment.',
+      'Processing time depends on the type of service. Most documentation services are completed within a few working days, subject to government approvals.',
   },
 ]
 
@@ -335,7 +360,7 @@ export const contactCards = [
   {
     label: 'Location',
     value: business.location,
-    href: 'https://www.google.com/maps/search/?api=1&query=Coimbatore',
+    href: 'https://www.google.com/maps/search/?api=1&query=567%2C%201st%20Floor%2C%201st%20Street%2C%20Gandhipuram%2C%20Coimbatore%20-%20641012',
     icon: MapPinned,
   },
 ]

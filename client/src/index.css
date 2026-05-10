@@ -60,18 +60,6 @@ img {
   color: #06231f;
 }
 
-@media (pointer: fine) {
-  body,
-  a,
-  button,
-  input,
-  textarea,
-  select,
-  [role="button"] {
-    cursor: none;
-  }
-}
-
 @layer components {
   .site-container {
     width: min(1180px, calc(100% - 32px));

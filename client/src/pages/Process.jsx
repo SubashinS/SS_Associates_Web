@@ -33,7 +33,7 @@ export default function Process() {
             </h1>
             <p className="mx-auto mt-6 max-w-3xl text-base leading-8 text-slate-600 sm:text-lg">
               From first call to handover, the process is designed to make
-              documentation, approvals, taxes, transfers, loans, and construction
+              documentation, legal paperwork, approvals, taxes, transfers, and loan
               tasks easier to understand and act on.
             </p>
             <div className="mt-8 flex justify-center">
